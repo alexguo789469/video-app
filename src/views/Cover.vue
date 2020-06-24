@@ -51,8 +51,10 @@ export default {
         }
     }
     .name{
+        padding-top: 10px;
         font-size: 12px;
         color: #212121;
+        text-align: center;
     }
 }
 </style>

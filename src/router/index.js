@@ -6,6 +6,7 @@ import userinfo from '../views/userinfo.vue'
 import edit from '../views/Edit.vue'
 import home from '../views/Home.vue'
 import article from '../views/Article.vue'
+import editcategory from '../views/editcategory.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,10 @@ Vue.use(VueRouter)
   {
     path: '/article/:id',
     component: article
+  },
+  {
+    path: '/editcategory',
+    component: editcategory
   }
   
 ]

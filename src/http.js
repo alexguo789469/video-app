@@ -20,7 +20,7 @@ http.interceptors.request.use(config => {
 http.interceptors.response.use(config => {
     return config
 },err => {
-    if(err.response.status == 401 || err.response.status == 402){
+    if(err.response.status == 401 || err.response.status == 403){
         router.push('/login');
         Vue.prototype.$errMsg.fail(err.response.data.message);
         console.dir(err);

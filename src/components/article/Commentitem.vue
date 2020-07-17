@@ -25,6 +25,7 @@
 export default {
   name: "commentchilditem",
   props: ["commentChild", "temp"],
+  //temp是用来判断回复要不要加回复人名称的
   methods: {
     postReplyComment(id){
       //和顺序没关系

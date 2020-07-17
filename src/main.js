@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import Vant from 'vant'
 import 'vant/lib/index.css'
-import http from "../http"
+import http from "./http"
 import { Toast } from 'vant'
 
 Vue.prototype.$errMsg = Toast

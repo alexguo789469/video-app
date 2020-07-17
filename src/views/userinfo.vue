@@ -1,6 +1,6 @@
 <template>
     <div id="infocontainer">
-        <nav-bar :userinfo="model"></nav-bar>
+        <nav-bar @getuserinfo="getuserinfo"></nav-bar>
        
 
         <img src="http://s1.hdslb.com/bfs/static/jinkela/mstation-h5/asserts/bannerTop_new.png" alt="">
@@ -53,14 +53,15 @@ export default {
         }
     },
     methods: {
-        async userinfo(){
-            const res = await this.$http.get('/user/' + localStorage.getItem('id'))
-            this.model = res.data[0];
+        // async userinfo(){
+        //     const res = await this.$http.get('/user/' + localStorage.getItem('id'))
+        //     this.model = res.data[0];
+        // }
+        getuserinfo(userinfo){
+            this.model = userinfo;
         }
     },
-    created() {
-        this.userinfo()
-    },
+
 }
 </script>
 

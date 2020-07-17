@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav-bar></nav-bar>
+        <nav-bar @getuserinfo="selectUser"></nav-bar>
 
         <div class="avator-container">
             <van-uploader :after-read="afterRead" class="uploadimg"></van-uploader>
@@ -75,15 +75,14 @@ export default {
 
         }
     },
-    created() {
-        this.selectUser()
-    },
+
     methods: {
         //获取用户数据
-        async selectUser(){
+        selectUser(data){
             //这里还可以用兄弟组件传值
-            const res = await this.$http.get('/user/' + localStorage.getItem('id'));
-            this.model = res.data[0];
+            // const res = await this.$http.get('/user/' + localStorage.getItem('id'));
+            // this.model = res.data[0];
+            this.model = data;
             this.value = this.model.name;
             this.descValue = this.model.user_desc;
         },

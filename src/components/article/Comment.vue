@@ -8,23 +8,6 @@
       <button @click="pleaseLogin">发表</button>
     </div>
 
-    <!-- <div v-if="addcomment.comment_content">
-      <div class="topcontainer">
-        <div class="avator">
-          <img :src="myuser.user_img" alt v-if="myuser" />
-          <img :src="default_img" alt v-else />
-        </div>
-        <div class="data">
-          <p v-if="myuser">{{myuser.name}}</p>
-          <p>{{addcomment.comment_date}}</p>
-        </div>
-      </div>
-      <p class="comBody">
-        {{addcomment.comment_content}}
-        <span class="reply">回复</span>
-      </p>
-    </div> -->
-
     <comment-body :commentlist="commentList" @focusipt="focusipt" :publishcommentData="publishcommentData"
     @postLastStep="postLastStep"
     ></comment-body>
@@ -39,7 +22,7 @@ export default {
     return {
       myuser: null,
       //用require才好使
-      default_img: require("../../assets/avator.png"),
+      default_img: require("../../assets/avator.jpg"),
       commentList: null,
       text: "",
       publishcommentData: {
@@ -76,6 +59,7 @@ export default {
       }
       this.post()
     },
+    //获取评论数据
     async commentData() {
       const res = await this.$http.get("/comment/" + this.$route.params.id);
       this.commentList = this.changeCommentData(res.data);
@@ -121,8 +105,8 @@ export default {
     }
   },
   created() {
-    this.myuserinfo();
-    this.commentData();
+    this.myuserinfo();//获取用户信息
+    this.commentData();//获取评论数据
   },
   components: {
     commentBody

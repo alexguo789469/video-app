@@ -1,28 +1,28 @@
-# 用vue仿照b站
+# Using Vue to imitate Bilibili
 
-## 登录和注册界面
+## Login and Register Page
 
-1. 单独建立了登录和注册可以共用组件
+1. create a common component
 
    + header
 
-     - header中的名字是通过父传子的方式将register或login界面的数据传递到header中
+     - The name in the header is to pass the data of the register or login interface to the header through the parent-child method
 
-     - 左边切换组件是通过slot插槽的方式传递的
-
-       子组件
+     - The data of the left switch component is passed through the slot
+  
+       Child Component
 
        ```html
        <slot name="right"></slot>
        ```
 
-       父组件
+       Father Component
 
        ```html
        <div slot="right" @click="$router.push('/login')">切换到登录</div>
        ```
 
-       $router.push相当于把当前页面推到另一个页面
+       $router.push is equivalent to pushing the current page to another page
 
    + body （使用了vant做为工具库）
 

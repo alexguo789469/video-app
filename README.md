@@ -80,7 +80,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
    
 
-## use axios to make HTTP request
+## Use axios to make HTTP request
 
 
    ```js
@@ -213,7 +213,7 @@ pathpush1(){
     }
 ```
 
-## edit user Info
+## Edit user Info
 
 
    ```js
@@ -306,7 +306,7 @@ pathpush1(){
       ```
 
 
-## render comments
+## Render comments
 
    ```js
        async post() {
